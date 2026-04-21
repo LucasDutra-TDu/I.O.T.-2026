@@ -6,7 +6,7 @@ import json
 
 # --- Configuración de Hardware ---
 d = dht.DHT22(machine.Pin(15))
-rele_pin = machine.Pin(14, machine.Pin.OUT)
+rele_pin = machine.Pin(16, machine.Pin.OUT)
 led_pin = machine.Pin("LED", machine.Pin.OUT) 
 
 DEVICE_ID = "TERMOSTATO_DUTRA"
@@ -16,7 +16,7 @@ config['server'] = BROKER
 config['ssid'] = SSID
 config['wifi_pw'] = password
 config['port'] = PORT
-config['ssl'] = False
+config['ssl'] = True
 
 # --- JSON parametros_dict ---
 CONFIG_FILE = "parametros_dict.json"
