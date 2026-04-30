@@ -127,11 +127,11 @@ async def messages(client):
         elif t.endswith("/destello"):
             asyncio.create_task(destellar_led())
 
-            # Si el valor realmente cambió, guardamos y enviamos la notificación
-            if hubo_cambio:
-                save_config()
-                # Lanzamos la notificación por MQTT
-                await notificar_cambio(client, param_modificado, parametros_dict[param_modificado])
+        # Si el valor realmente cambió, guardamos y enviamos la notificación
+        if hubo_cambio:
+            save_config()
+            # Lanzamos la notificación por MQTT
+            await notificar_cambio(client, param_modificado, parametros_dict[param_modificado])
 
 async def notificar_cambio(client, parametro, nuevo_valor):
     """Publica un JSON confirmando el cambio realizado"""
